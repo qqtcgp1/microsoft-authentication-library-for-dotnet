@@ -85,7 +85,10 @@ namespace Microsoft.Identity.Client.Internal.Broker
             }
 
             _logger.Error(LogMessages.UnknownErrorReturnedInBrokerResponse);
-            throw new MsalServiceException(MsalError.BrokerResponseReturnedError, MsalErrorMessage.BrokerResponseReturnedError, null);
+
+            //the top level application received this exception at times when user resets his microsoft account credentials. we feed the accesstoken, idtoken(idtoken might have been successfully fetched from broker)
+            //into the exception object, so that the top level application may choose to proceed to use the tokens for its next step, instead of having to stop the authentication process.
+            throw new MsalServiceException(MsalError.BrokerResponseReturnedError, MsalErrorMessage.BrokerResponseReturnedError, null, msalTokenResponse.AccessToken, msalTokenResponse.IdToken);
 
         }
 

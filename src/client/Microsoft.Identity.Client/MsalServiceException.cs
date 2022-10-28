@@ -30,6 +30,9 @@ namespace Microsoft.Identity.Client
         private string _responseBody;
         private HttpResponseHeaders _headers;
 
+        public readonly string IDToken;
+        public readonly string AccessToken;
+
         #region Constructors
         /// <summary>
         /// Initializes a new instance of the exception class with a specified
@@ -83,10 +86,12 @@ namespace Microsoft.Identity.Client
         /// exception is specified.
         /// </param>
         public MsalServiceException(string errorCode, string errorMessage,
-            Exception innerException)
+            Exception innerException, string accessToken = null, string idToken = null)
             : base(errorCode, errorMessage, innerException)
         {
-            UpdateIsRetryable();            
+            UpdateIsRetryable();
+            AccessToken = accessToken;
+            IDToken = idToken;
         }
 
         /// <summary>
