@@ -135,10 +135,9 @@ namespace Microsoft.Identity.Test.Common.Core.Mocks
         public static HttpResponseMessage AddResiliencyMessageMockHandler(
             this MockHttpManager httpManager,
             HttpMethod httpMethod,
-            HttpStatusCode httpStatusCode, 
-            int? retryAfter = null)
+            HttpStatusCode httpStatusCode)
         {
-            var response = MockHelpers.CreateServerErrorMessage(httpStatusCode, retryAfter);
+            var response = MockHelpers.CreateResiliencyMessage(httpStatusCode);
             httpManager.AddMockHandler(
                 new MockHttpMessageHandler()
                 {

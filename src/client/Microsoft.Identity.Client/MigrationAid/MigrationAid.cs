@@ -14,6 +14,10 @@ using Microsoft.Identity.Client.PlatformsCommon.Factories;
 using Microsoft.Identity.Client.PlatformsCommon.Interfaces;
 using Microsoft.Identity.Client.TelemetryCore;
 
+#if iOS
+using Microsoft.Identity.Client.Platforms.iOS;
+#endif
+
 #if ANDROID
 using Android.App;
 #endif

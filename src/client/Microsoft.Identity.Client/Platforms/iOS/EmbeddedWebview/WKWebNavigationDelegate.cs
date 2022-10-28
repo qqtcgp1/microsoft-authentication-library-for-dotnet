@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using CoreFoundation;
 using Foundation;
+using Microsoft.Identity.Client.Platforms.Shared.Apple;
 using Microsoft.Identity.Client.PlatformsCommon;
 using Microsoft.Identity.Client.PlatformsCommon.Shared;
 using Microsoft.Identity.Client.UI;

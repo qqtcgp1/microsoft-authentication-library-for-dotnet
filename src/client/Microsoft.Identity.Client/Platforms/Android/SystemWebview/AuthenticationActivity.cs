@@ -23,7 +23,7 @@ namespace Microsoft.Identity.Client.Platforms.Android.SystemWebview
 {
     /// <summary>
     /// </summary>
-    [Activity(Name = "microsoft.identity.client.AuthenticationActivity", Exported=true)]
+    [Activity(Name = "microsoft.identity.client.AuthenticationActivity")]
 #if MAUI
     [Preserve(AllMembers = true)]
 #else

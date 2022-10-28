@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace Microsoft.Identity.Client.Platforms.iOS
+namespace Microsoft.Identity.Client.Platforms.Shared.Apple
 {
     internal static class BrokerConstants
     {
